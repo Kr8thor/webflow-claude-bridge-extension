@@ -1,0 +1,6 @@
+{
+  "name": "Claude Webflow Builder Bridge",
+  "apiVersion": "2",
+  "size": "large",
+  "publicDir": "public"
+}
