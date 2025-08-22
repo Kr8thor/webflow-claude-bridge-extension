@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Getting Started - Claude Webflow Bridge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        font: 16px system-ui;
+        margin: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #333;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container {
+        background: white;
+        border-radius: 16px;
+        padding: 40px;
+        max-width: 600px;
+        margin: 20px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+      h1 {
+        color: #4f46e5;
+        margin-bottom: 16px;
+        font-size: 32px;
+      }
+      .success {
+        background: #d1fae5;
+        color: #065f46;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 24px;
+        font-weight: 600;
+      }
+      .steps {
+        text-align: left;
+        margin: 24px 0;
+      }
+      .step {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        padding: 16px;
+        background: #f8f9fa;
+        border-radius: 8px;
+      }
+      .step-number {
+        background: #4f46e5;
+        color: white;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-right: 16px;
+        flex-shrink: 0;
+        font-size: 14px;
+      }
+      .step-content {
+        flex: 1;
+      }
+      .step-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #374151;
+      }
+      .step-desc {
+        color: #6b7280;
+        font-size: 14px;
+      }
+      .cta {
+        background: #4f46e5;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 24px;
+        font-weight: 600;
+        transition: background 0.2s;
+      }
+      .cta:hover {
+        background: #4338ca;
+      }
+      .code {
+        background: #1f2937;
+        color: #f9fafb;
+        padding: 12px;
+        border-radius: 8px;
+        font-family: monospace;
+        font-size: 14px;
+        margin: 8px 0;
+        text-align: left;
+        overflow-x: auto;
+      }
+      .warning {
+        background: #fef3c7;
+        color: #92400e;
+        padding: 12px;
+        border-radius: 8px;
+        margin: 16px 0;
+        font-size: 14px;
+        border-left: 4px solid #f59e0b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎉 Installation Complete!</h1>
+      
+      <div class="success">
+        ✅ Claude Webflow Bridge has been successfully installed to your site
+      </div>
+
+      <p>Your AI-powered page building extension is ready! Follow these steps to start creating pages with Claude:</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <div class="step-title">Start Local Bridge Server</div>
+            <div class="step-desc">Run the bridge server that connects Claude to your extension</div>
+            <div class="code">cd bridge/<br>npm start</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <div class="step-title">Open Webflow Designer</div>
+            <div class="step-desc">Navigate to your site in Webflow Designer (not the Editor)</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <div class="step-title">Launch Extension</div>
+            <div class="step-desc">Press 'E' to open Apps panel, then click "Claude Webflow Bridge"</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <div class="step-title">Verify Connection</div>
+            <div class="step-desc">Check that WebSocket status shows "connected" in the extension panel</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <div class="step-title">Start Building with Claude</div>
+            <div class="step-desc">Use Claude MCP tools to send page creation tasks to the bridge API</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning">
+        <strong>Important:</strong> The local bridge server must be running for the extension to work. The extension connects to <code>ws://127.0.0.1:8787</code>
+      </div>
+
+      <a href="https://github.com/Kr8thor/webflow-claude-bridge-extension" target="_blank" class="cta">
+        📚 View Documentation
+      </a>
+    </div>
+  </body>
+</html>
