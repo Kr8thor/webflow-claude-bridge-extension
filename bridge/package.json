@@ -1,0 +1,30 @@
+{
+  "name": "webflow-bridge-server",
+  "version": "1.0.0",
+  "description": "Bridge server for Claude Webflow Designer Extension",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env --loader ts-node/esm server.ts",
+    "dev": "node --env-file=.env --loader ts-node/esm --watch server.ts",
+    "build": "tsc server.ts --outDir dist --target ES2022 --module ES2022 --moduleResolution bundler",
+    "health": "curl http://127.0.0.1:8788/health | jq ."
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.7",
+    "@types/ws": "^8.5.10"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
