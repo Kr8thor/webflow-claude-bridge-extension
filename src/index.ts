@@ -197,9 +197,9 @@ class WebflowBridge {
         return { pageId: page.id, name: op.name, slug: op.slug };
 
       case "BUILD_TREE":
-        const parent = await this.getParentElement(op.parent);
+        const parentElement = await this.getParentElement(op.parent);
         const built = this.buildWithBuilder(op.tree);
-        await parent.append(built);
+        await parentElement.append(built);
         return { success: true, parentType: op.parent };
 
       case "SET_TEXT_BY_OID":
@@ -232,10 +232,10 @@ class WebflowBridge {
         return { styleName: op.style.name, appliedTo: op.oids.length };
 
       case "ADD_IMAGE":
-        const parent = await this.findByOid(op.parentOid[0], op.parentOid[1]);
-        if (!parent?.children) throw new Error('Parent element not found');
+        const imageParent = await this.findByOid(op.parentOid[0], op.parentOid[1]);
+        if (!imageParent?.children) throw new Error('Parent element not found');
         
-        const img = await parent.append(webflow.elementPresets.Image);
+        const img = await imageParent.append(webflow.elementPresets.Image);
         if (img?.type === "Image") {
           if (op.asset?.byId) {
             const asset = await webflow.getAssetById(op.asset.byId);
