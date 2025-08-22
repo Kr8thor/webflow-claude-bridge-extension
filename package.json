@@ -1,0 +1,24 @@
+{
+  "name": "webflow-claude-bridge-extension",
+  "version": "1.0.0",
+  "description": "Webflow Designer API Bridge Extension for Claude",
+  "private": true,
+  "scripts": {
+    "build": "npm run clean && npm run compile && npm run copy-assets",
+    "compile": "tsc -p .",
+    "copy-assets": "cp webflow.json public/ && cp -r assets/* public/ 2>/dev/null || true",
+    "clean": "rm -rf public && mkdir -p public",
+    "dev": "concurrently \"npm run compile -- --watch\" \"npm run copy-assets\"",
+    "start": "npm run build && npx serve public"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@webflow/designer-extension-typings": "^2.0.21",
+    "concurrently": "^9.0.1",
+    "typescript": "^5.5.4",
+    "serve": "^14.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
